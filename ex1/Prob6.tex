@@ -1,0 +1,10 @@
+\section{Problem 6}
+\subsection{$E[X] = E_Y[E_{X|Y}[X]] $}
+
+$E_Y[E_{X|Y}[X]] = E_Y[\int(\frac{p(x,y)}{p(y)}*x)dx] = \int p(y) * (\int(\frac{p(x,y)}{p(y)}*x)dx) dy = \int p(y) * \frac{1}{p(y)} (\int(p(x,y)*x)dx) dy = \int (\int(p(x,y)*x)dx) dy = E[X] $ 
+
+\subsection{$Var[x] = E_Y[Var_{X|Y}[X]]-Var_Y[E_{X|Y}[X]]$}
+$E_Y[Var_{X|Y}[X]]-Var_Y[E_{X|Y}[X]] = E_Y[E_{X|Y}[X^2]-E_{X|Y}[X]^2]-Var_Y[E_{X|Y}[X]] = 
+E_Y[E_{X|Y}[X^2]-E_{X|Y}[X]^2]-E_Y[E_{X|Y}[X]^2] -E_Y[E_{X|Y}[X]]^2 = 
+E_Y[E_{X|Y}[X^2]] - E_Y[E_{X|Y}[X]]^2 =
+ E[X^2]-E[X]^2 =Var[X]$
