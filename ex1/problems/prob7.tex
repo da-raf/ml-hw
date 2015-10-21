@@ -1,3 +1,12 @@
-\section{Problem 7}
-\subsection{$P[X>c] \leq \frac{E[X]}{c}$}
-$\frac{E[X]}{c} = \frac{\sum (p(x)*x)}{c} = \frac{\sum_{x = -\inf}^{c-1} (p(x)*x) + \sum_{x = c}^{\inf} (p(x)*x)}{c} \ge \frac{\sum_{x = c}^{\inf} (p(x)*x)}{c} \ge \frac{\sum_{x = c}^{\inf} (p(x)*c)}{c} = \sum_{x = c}^{\inf} (p(x)) = P(X \ge c ) \ge P(X > c ) $
+\begin{itemize}
+\item{$P[X>c] \leq \frac{\E[X]}{c}$:
+\begin{align*}
+\frac{\E[X]}{c} &= \frac{\sum (p(x) \cdot x)}{c} \\
+ &= \frac{\sum_{x = -\inf}^{c-1} (p(x) \cdot x) + \sum_{x = c}^{\inf} (p(x) \cdot x)}{c} \\
+ &\ge \frac{\sum_{x = c}^{\inf} (p(x) \cdot x)}{c} \\
+ &\ge \frac{\sum_{x = c}^{\inf} (p(x) \cdot c)}{c} \\
+ &= \sum_{x = c}^{\inf} (p(x)) = P(X \ge c ) \\
+ &\ge P(X > c )
+\end{align*}}
+\end{itemize}
+
