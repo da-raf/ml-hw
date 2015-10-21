@@ -1,0 +1,23 @@
+\begin{itemize}
+  \item{$T \in \{0,1\}$: the scanned person is a civilian or terrorist respectively}
+  \item{$S \in \{0,1\}$: scanner identifies the person as a civilian or terrorist respectively}
+\end{itemize}
+
+\begin{align*}
+P(S=1|T=1) &= 0.95 \\
+P(S=0|T=0) &= 0.95 \\
+P(T=1) &= 0.01
+\end{align*}
+
+\begin{align*}
+\Rightarrow P(T=0) &= 1 - P(T=1) = 0.99 \\
+\Rightarrow P(S=1|T=0) &= 1 - P(S=0|T=0) = 0.05
+\end{align*}
+
+\begin{align*}
+P(T=1|S=1) &= \frac{P(S=1|T=1) \cdot P(T=1)}{P(S=1)} \\
+           &= \frac{P(S=1|T=1) \cdot P(T=1)}{\sum\limits_{t \in \{0,1\}} P(S=1|T=t) \cdot P(T=t)} \\
+	   &= \frac{0.95 \cdot 0.01}{0.05 \cdot 0.99 + 0.95 \cdot 0.01} \\
+	   &= \frac{1}{6}
+\end{align*}
+
