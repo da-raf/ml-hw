@@ -1,0 +1,13 @@
+\begin{itemize}
+\item{$X=1$: next ball drawn from one of the urns is black}
+\item{$X=0$: next ball drawn from one of the urns is white}
+\end{itemize}
+
+\[ X \sim \mathrm{Ber}\left( \frac{u}{10} \right) \]
+
+\begin{align*}
+P(X=1) &= \sum\limits_{u=0}^{10} P(X=1|U=u) \cdot P(U=u) \\
+       &= \frac{673471}{2022206} \\
+       &\approx 0.33304
+\end{align*}
+

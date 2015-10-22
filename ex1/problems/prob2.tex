@@ -1,8 +1,24 @@
 \begin{itemize}
-  \item{$C \in \{0,1\}$: the tossed coin showes head or tail respectively}
-  \item{$R \in \{0,1,2,3\}$: number of red balls drawn from the box
-\[ C \sim \mathrm{Ber}\left(\frac{1}{2}\right) \]}
-  \item{$T \in \{0,1,2\}$: the number of coin tosses that resulted in \emph{tail}}
-\[ \Rightarrow T \sim \mathrm{Bin}\left(2, \frac{1}{2}\right) \]
+  \item{$C = \{0,1\}$: the tossed coin showes head or tail respectively}
+\[ C \sim \mathrm{Ber}\left(\frac{1}{2}\right) \]
+  \item{$T = \{0,1,2\}$: the number of two coin tosses that resulted in \emph{tail}
+\[ \Rightarrow T \sim \mathrm{Bin}\left(2, \frac{1}{2}\right) \]}
+  \item{$R = \{0,1,2,3\}$: number of red balls drawn from the box
+\[ R \sim \mathrm{Bin}\left(3, \frac{t}{2}\right) \]
+}
 \end{itemize}
+
+\begin{align*}
+P(T=t) &= \binom{2}{t} \cdot \left(\frac{1}{2}\right)^t \cdot \left(\frac{1}{2}\right)^{2-t} = \frac{1}{4} \cdot \binom{2}{t} \\
+P(R=r|T=t) &= \binom{3}{r} \cdot \left( \frac{t}{2} \right)^r \cdot \left(1 - \frac{t}{2}\right)^{3-r} \\
+P(T|R) &= \frac{P(R|T) \cdot P(T)}{P(R)}
+\end{align*}
+
+\begin{align*}
+\Rightarrow P(T=2|R=3) &= \frac{P(R=3|T=2) \cdot P(T=2)}{P(R=3)} \\
+                       &= P(R=3|T=2) \cdot \frac{P(T=2)}{P(R=3)} \\
+		       &= P(R=3|T=2) \cdot \frac{P(T=2)}{\sum\limits_{t \in T} P(R=3|T=t) \cdot P(T=t)} \\
+		       &= 1 \cdot \frac{\frac{1}{4}}{0 \cdot \frac{1}{4} + \frac{1}{8} \cdot \frac{1}{2} + 1 \cdot \frac{1}{4}} \\
+		       &= \frac{ \frac{1}{4} }{ \frac{5}{16} } = \frac{4}{5}
+\end{align*}
 

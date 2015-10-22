@@ -1,0 +1,44 @@
+random variables:
+\begin{itemize}
+\item{$U$: the selected urn}
+\item{$B$: the number of black balls drawn from an urn}
+\end{itemize}
+
+\begin{align*}
+U &\sim \mathrm{U}(-1, 10) \\
+B &\sim \mathrm{Bin}\left(10, 10 \cdot \frac{u}{10}\right) = \mathrm{Bin}(10,u) \\
+\Rightarrow P(U) &= \frac{1}{11} \\
+\Rightarrow P(B|U) &= \binom{10}{b} \cdot \left( \frac{u}{10} \right)^b \cdot \left( 1 - \frac{u}{10} \right)^{10-b} \\
+\end{align*}
+
+\begin{align*}
+P(U|B) &= \frac{ P(B|U) \cdot P(U) }{ P(B) } \\
+P(B) &= \sum\limits_{u' \in U} P(B|U=u') \cdot P(U=u') \\
+     &= \sum\limits_{u' \in U} \binom{10}{b} \cdot \left( \frac{u'}{10} \right)^b \cdot \left( 1 - \frac{u'}{10} \right)^{10-b} \cdot \frac{1}{11} \\
+     &= \frac{1}{11} \cdot \binom{10}{b} \cdot \sum\limits_{u' \in U} \left( \frac{u'}{10} \right)^b \cdot \left( 1 - \frac{u'}{10} \right)^{10-b} \\
+     &= \frac{1}{11} \cdot \binom{10}{b} \cdot \sum\limits_{u' = 0}^{10} \left( \frac{u'}{10} \right)^b \cdot \left( 1 - \frac{u'}{10} \right)^{10-b} \\
+\end{align*}
+
+\begin{align*}
+P(U=u|B=b) &= \frac{ P(B=b|U=u) \cdot P(U=u) }{ P(B=b) } \\
+           &= \frac{\binom{10}{b} \cdot \left( \frac{u}{10} \right)^b \cdot \left( 1 - \frac{u}{10} \right)^{10-b} \cdot \frac{1}{11} }{ \frac{1}{11} \cdot \binom{10}{b} \cdot \sum\limits_{u' = 0}^{10} \left( \frac{u'}{10} \right)^b \cdot \left( 1 - \frac{u'}{10} \right)^{10-b} } \\
+           &= \frac{\left( \frac{u}{10} \right)^b \cdot \left( 1 - \frac{u}{10} \right)^{10-b} }{ \sum\limits_{u' = 0}^{10} \left( \frac{u'}{10} \right)^b \cdot \left( 1 - \frac{u'}{10} \right)^{10-b} } \\
+P(U=u|B=3) &= \frac{\left( \frac{u}{10} \right)^3 \cdot \left( 1 - \frac{u}{10} \right)^{7} }{ \sum\limits_{u' = 0}^{10} \left( \frac{u'}{10} \right)^3 \cdot \left( 1 - \frac{u'}{10} \right)^{7} }
+\end{align*}
+
+\begin{align*}
+\Rightarrow P(U=0|B=3) &= 0 \\
+\Rightarrow P(U=1|B=3) &= \frac{1594323}{25277575} \\
+\Rightarrow P(U=2|B=3) &= \frac{16777216}{75832725} \\
+\Rightarrow P(U=3|B=3) &= \frac{7411887}{25277575} \\
+\Rightarrow P(U=4|B=3) &= \frac{5971968}{25277575} \\
+\Rightarrow P(U=5|B=3) &= \frac{390625}{3033309} \\
+\Rightarrow P(U=6|B=3) &= \frac{1179648}{25277575} \\
+\Rightarrow P(U=7|B=3) &= \frac{250047}{25277575} \\
+\Rightarrow P(U=8|B=3) &= \frac{65536}{75832725} \\
+\Rightarrow P(U=9|B=3) &= \frac{243}{25277575} \\
+\Rightarrow P(U=10|B=3) &= 0
+\end{align*}
+
+\includegraphics[scale=0.5]{problems/prob3_plot.png}
+
