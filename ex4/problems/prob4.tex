@@ -1,0 +1,25 @@
+Show:
+*TODO: Show $\theta_{MLH} = \frac{|X=1|}{|X=1|+|X=0|} $ referece to prob 3 \\
+
+Formalized Problem: \\
+$mean(P(\theta | D )) = \lambda * mean(p(\theta)) + (1-\lambda ) * \theta_{MLH} $ \\
+$mean(Beta(a +|X=1|,b +|X=0| )) = \lambda * mean(Beta(a,b)) + (1-\lambda ) * \theta_{MLH} $ \\
+$\frac{a+|X=1|}{a+|X=1|+b+|X=0|} = \lambda * \frac{a}{a+b} + (1-\lambda ) * \frac{|X=1|}{|X=1|+|X=0|} $ \\
+
+With: $0\le \lambda \le 1$ \\
+
+Solution:
+$\frac{a+|X=1|}{a+|X=1|+b+|X=0|} = $ \\
+$\frac{a}{a+|X=1|+b+|X=0|} + \frac{|X=1|}{a+|X=1|+b+|X=0|} = $ \\
+$\frac{a}{a+b+|X=1|+|X=0|} + \frac{|X=1|}{|X=1|+|X=0|+a+b} = $ \\
+$\frac{a}{a+b*(1+\frac{|X=1|+|X=0|}{a+b}} + \frac{|X=1|}{|X=1|+|X=0|*(1+\frac{a+b}{|X=1|+|X=0|}} = $ \\
+$\frac{a}{a+b}*\frac{1}{1+\frac{|X=1|+|X=0|}{a+b}} + \frac{|X=1|}{|X=1|+|X=0|}*\frac{1}{(1+\frac{a+b}{|X=1|+|X=0|}} =$ \\
+$\frac{a}{a+b}*\frac{1}{1+\frac{|X=1|+|X=0|}{a+b}} + \frac{|X=1|}{|X=1|+|X=0|}*\frac{|X=1|+|X=0|}{(|X=1|+|X=0|+(a+b)} =$ \\
+$\frac{a}{a+b}*\frac{1}{1+\frac{|X=1|+|X=0|}{a+b}} + \frac{|X=1|}{|X=1|+|X=0|}*(\frac{|X=1|+|X=0|+a+b}{(|X=1|+|X=0|+(a+b)} -\frac{a+b}{(|X=1|+|X=0|+(a+b))} =$ \\
+$\frac{a}{a+b}*\frac{1}{1+\frac{|X=1|+|X=0|}{a+b}} + \frac{|X=1|}{|X=1|+|X=0|}*(1-\frac{a+b}{(|X=1|+|X=0|+(a+b))}) =$ \\
+$\frac{a}{a+b}*\frac{1}{1+\frac{|X=1|+|X=0|}{a+b}} + \frac{|X=1|}{|X=1|+|X=0|}*(1-\frac{1}{(\frac{|X=1|+|X=0|}{a+b}+1)}) =$ \\
+insert: \\
+$\lambda = \frac{1}{1+\frac{|X=1|+|X=0|}{a+b}}$ \\
+$= \lambda * \frac{a}{a+b} + (1-\lambda ) * \frac{|X=1|}{|X=1|+|X=0|} $ \\
+
+qed.
