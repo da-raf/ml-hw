@@ -2,13 +2,13 @@ $ P(\lambda | x) = \frac{P(X|\lambda) * P(\lambda)}{P(X)}$ \\
 $ P(\lambda | x) = \frac{P(X|\lambda) * P(\lambda)}{\int_{0}^{\infty}(P(X|\lambda) * P(\lambda))d{\lambda}}$ \\
 
 Step 1: \\
-
-$\int_{0}^{\infty} P(\lambda) D{\lambda} = 1$\\
-$\int_{0}^{\infty} Gamma(a,b) D{\lambda} = 1$\\
-$\int_{0}^{\infty} \frac{b^a}{\Gamma(a)} * \lambda^{a-1} * e^{-b\lambda} D{\lambda} = 1$\\ 
-$\frac{b^a}{\Gamma(a)} * \int_{0}^{\infty} \lambda^{a-1} * e^{-b\lambda} D{\lambda} = 1$\\
-$\int_{0}^{\infty} \lambda^{a-1} * e^{-b\lambda} D{\lambda} = \frac{\Gamma(a)}{b^a}$\\
-
+\\
+$\int_{0}^{\infty} P(\lambda) d{\lambda} = 1$\\
+$\int_{0}^{\infty} Gamma(a,b) d{\lambda} = 1$\\
+$\int_{0}^{\infty} \frac{b^a}{\Gamma(a)} * \lambda^{a-1} * e^{-b\lambda} d{\lambda} = 1$\\ 
+$\frac{b^a}{\Gamma(a)} * \int_{0}^{\infty} \lambda^{a-1} * e^{-b\lambda} d{\lambda} = 1$\\
+$\int_{0}^{\infty} \lambda^{a-1} * e^{-b\lambda} d{\lambda} = \frac{\Gamma(a)}{b^a}$\\
+\\
 Step2: \\
 
 $P(X) = \int_{0}^{\infty}(P(X|\lambda) * P(\lambda))d{\lambda} $ \\
@@ -17,8 +17,10 @@ $\int_{0}^{\infty}\frac{e^{-\lambda} * \lambda^x}{x!} * \frac{b^a}{\Gamma(a)} * 
 $\frac{b^a}{\Gamma(a)*x!} \int_{0}^{\infty}e^{-\lambda} * \lambda^x * \lambda^{a-1} * e^{-b\lambda} )d{\lambda} =$\\
 
 $\frac{b^a}{\Gamma(a)*x!} \int_{0}^{\infty} \lambda^{x+a-1} * e^{-(b+1)\lambda} )d{\lambda} =$\\
+\\
 Applying Step1:\\
 $\frac{b^a}{\Gamma(a)*x!} * \frac{\Gamma(x+a)}{(b+1)^{x+a}}$\\
+\\
 Putting it together:\\
 $ P(\lambda | x) = \frac{P(X|\lambda) * P(\lambda)}{P(X)}=$ \\
 $\frac{\frac{e^{-\lambda} * \lambda^x}{x!} * \frac{b^a}{\Gamma(a)} * \lambda^{a-1} * e^{-b\lambda} }{\frac{b^a}{\Gamma(a)*x!} * \frac{\Gamma(x+a)}{(b+1)^{x+a}}} =$ \\
@@ -31,16 +33,16 @@ ${e^{-\lambda} * \lambda^x} * \lambda^{a-1} * e^{-b\lambda} * \frac{(b+1)^{x+a}}
 $\lambda^{a+x-1} * e^{-(b+1)\lambda} * \frac{(b+1)^{x+a}}{\Gamma(x+a)} = $ \\
 %$\frac{(b+1)^{x+a}}{\Gamma(x+a)}*\lambda^{a+x-1} * e^{-(b+1)\lambda} = $ \\
 $Gamma(a+x,b+1)$
-
+\\
 Calculating Map: \\
 $\frac{d}{d\lambda} P(\lambda | x)  = 0$
-
-$\frac{d}{d\lambda} ln (P(\lambda | x))  = 0$
+\\
+$\frac{d}{d\lambda} ln (P(\lambda | x))  = 0$ \\
 $\frac{d}{d\lambda} ln (P(\lambda | x))   = \frac{d}{d\lambda} ln(\frac{(b+1)^{x+a}}{\Gamma(x+a)}*\lambda^{a+x-1} * e^{-(b+1)\lambda}) = $ \\
 $\frac{d}{d\lambda} ln(\frac{(b+1)^{x+a}}{\Gamma(x+a)})+ ln(\lambda^{a+x-1}) + ln(e^{-(b+1)\lambda}) = $ \\
 $\frac{d}{d\lambda}(a+x-1)*ln(\lambda) + {-(b+1)\lambda} = $ \\
 $(a+x-1)*\frac{1}{\lambda} + -(b+1)$ \\
-
+\\
 $(a+x-1)*\frac{1}{\lambda} + -(b+1) = 0$ \\
 $(a+x-1)*\frac{1}{\lambda} = (b+1)$ \\
 $(a+x-1) = (b+1) \lambda$ \\

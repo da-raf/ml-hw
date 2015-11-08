@@ -1,29 +1,6 @@
-\begin{itemize}
-\item $T$: number of tails thrown before the first occurrance of a head
-\item coin is unbiased $\Rightarrow$ probability of throwing head or tail in a single coin flip is $\frac{1}{2}$
-\item $\E[H] = 1$ since the expriment is stopped after the first head
-\end{itemize}
+Since we throw the coin until one Head occurce E(H) =1  \\
 
-\begin{align*}
-P(T=t) &= \left(\frac{1}{2}\right)^t \cdot \frac{1}{2} \\
-       &= \left(\frac{1}{2}\right)^{t+1}
-\end{align*}
+The number of Tails: expected:
 
-
-\begin{align*}
-\E[T] &= \int_0^\infty P(T=t) \cdot t \di t \\
-      &= \int_0^\infty \left(\frac{1}{2}\right)^{t+1} \cdot t \di t \\
-      &= \frac{1}{2} \cdot \int_0^\infty \left(\frac{1}{2}\right)^t \cdot t \di t \\
-      &= \frac{1}{2} \cdot \int_0^\infty e^{\ln\left(\frac{1}{2}\right) \cdot t} \cdot t \di t \\
-\end{align*}
-
-Apply the product rule of integration:
-\begin{align*}
-\E[T] &= \frac{1}{2} \cdot \int_0^\infty e^{\ln\left(\frac{1}{2}\right) \cdot t} \cdot t \di t \\
-      &= \frac{1}{2} \cdot \left( \left[ \frac{1}{\ln \left( \frac{1}{2} \right)} \cdot e^{\ln\left(\frac{1}{2}\right) \cdot t} \cdot t \right]_{t=0}^\infty - \int_0^\infty \frac{1}{\ln\left(\frac{1}{2}\right)} \cdot e^{\ln\left(\frac{1}{2}\right) \cdot t} \cdot 1 \di t \right) \\
-      &= \frac{1}{2} \cdot \left((0-0) - \frac{1}{\ln\left(\frac{1}{2}\right)} \cdot \int_0^\infty e^{\ln\left(\frac{1}{2}\right) \cdot t} \di t \right) \\
-      &= - \frac{1}{2} \cdot \left[ \frac{1}{\left( \ln \left( \frac{1}{2} \right) \right)^2} \cdot e^{\ln\left(\frac{1}{2}\right) \cdot t} \right]_0^\infty \\
-      &= - \frac{1}{2} \cdot \frac{1}{\left( \ln \left( \frac{1}{2} \right) \right)^2} \cdot (0 - e^0) \\
-      &= \frac{1}{2 \cdot \left( \ln \left( \frac{1}{2} \right) \right)^2} \\
-      &\approx 1.04068
-\end{align*}
+$E(T) = \sum_{n=0}^{\inf} (\frac{1}{2}^{n}*n * \frac{1}{2}) $ \\
+$ = \frac{1}{2} *\sum_{n=0}^{\inf} (\frac{1}{2}^{n}*n) = \frac{1}{2} * 2 = 1 $

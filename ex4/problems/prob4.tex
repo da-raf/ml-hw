@@ -1,5 +1,29 @@
 Show:
-*TODO: Show $\theta_{MLH} = \frac{|X=1|}{|X=1|+|X=0|} $ referece to prob 3 \\
+\begin{align*}
+	\theta_{MLE} &= \argmax_\theta P(X=x|\theta) \\
+	\Rightarrow 0 &= \frac{\di P}{\di \theta}(\theta_{MLE}) \\
+	\Rightarrow 0 &= \frac{\di \log{P}}{\di \theta} (\theta_{MLE})
+\end{align*}
+
+\begin{align*}
+	\log P(X=m|\theta) &= \log{\binom{N}{m}\theta^m (1-\theta)^{n-m}} \\
+	&= \log{\binom{N}{m}}+ m \cdot \log{\theta} + (N-m) \cdot \log{(1-\theta)}
+\end{align*}
+
+\begin{align*}
+0 &= \frac{\di}{\di \theta} ( \log{\binom{N}{m}}+ m \cdot \log{\theta} + (N-m) \cdot \log{(1-\theta)} ) \\
+	&= m \cdot \frac{1}{\theta} + (N-m) \cdot \frac{1}{1-\theta} \cdot (-1) \\
+	&= \frac{m}{\theta} - \frac{N-m}{1-\theta} \\
+	\Leftrightarrow \frac{N-m}{1-\theta} &= \frac{m}{\theta} \\
+	\Leftrightarrow \frac{N-m}{m} &= \frac{1-\theta}{\theta} \\
+	\Leftrightarrow \frac{N-m}{m} &= \frac{1}{\theta} - 1 \\
+	\Leftrightarrow \frac{N-m}{m} +1 &= \frac{1}{\theta} \\
+	\Leftrightarrow \frac{N-m+m}{m}  &= \frac{1}{\theta} \\
+	\Leftrightarrow \theta &= \frac{m}{N} \\
+	\Rightarrow \theta_{MLE} &= \frac{|X=1|}{|X=1|+|X=0|} \
+	\end{align*}
+
+
 
 Formalized Problem: \\
 $mean(P(\theta | D )) = \lambda * mean(p(\theta)) + (1-\lambda ) * \theta_{MLH} $ \\
@@ -8,18 +32,22 @@ $\frac{a+|X=1|}{a+|X=1|+b+|X=0|} = \lambda * \frac{a}{a+b} + (1-\lambda ) * \fra
 
 With: $0\le \lambda \le 1$ \\
 
-Solution:
-$\frac{a+|X=1|}{a+|X=1|+b+|X=0|} = $ \\
-$\frac{a}{a+|X=1|+b+|X=0|} + \frac{|X=1|}{a+|X=1|+b+|X=0|} = $ \\
-$\frac{a}{a+b+|X=1|+|X=0|} + \frac{|X=1|}{|X=1|+|X=0|+a+b} = $ \\
-$\frac{a}{a+b*(1+\frac{|X=1|+|X=0|}{a+b}} + \frac{|X=1|}{|X=1|+|X=0|*(1+\frac{a+b}{|X=1|+|X=0|}} = $ \\
-$\frac{a}{a+b}*\frac{1}{1+\frac{|X=1|+|X=0|}{a+b}} + \frac{|X=1|}{|X=1|+|X=0|}*\frac{1}{(1+\frac{a+b}{|X=1|+|X=0|}} =$ \\
-$\frac{a}{a+b}*\frac{1}{1+\frac{|X=1|+|X=0|}{a+b}} + \frac{|X=1|}{|X=1|+|X=0|}*\frac{|X=1|+|X=0|}{(|X=1|+|X=0|+(a+b)} =$ \\
-$\frac{a}{a+b}*\frac{1}{1+\frac{|X=1|+|X=0|}{a+b}} + \frac{|X=1|}{|X=1|+|X=0|}*(\frac{|X=1|+|X=0|+a+b}{(|X=1|+|X=0|+(a+b)} -\frac{a+b}{(|X=1|+|X=0|+(a+b))} =$ \\
-$\frac{a}{a+b}*\frac{1}{1+\frac{|X=1|+|X=0|}{a+b}} + \frac{|X=1|}{|X=1|+|X=0|}*(1-\frac{a+b}{(|X=1|+|X=0|+(a+b))}) =$ \\
-$\frac{a}{a+b}*\frac{1}{1+\frac{|X=1|+|X=0|}{a+b}} + \frac{|X=1|}{|X=1|+|X=0|}*(1-\frac{1}{(\frac{|X=1|+|X=0|}{a+b}+1)}) =$ \\
-insert: \\
+Solution:\\
+
+\begin{align*}
+&\frac{a+|X=1|}{a+|X=1|+b+|X=0|}  \\
+&=\frac{a}{a+|X=1|+b+|X=0|} + \frac{|X=1|}{a+|X=1|+b+|X=0|}   \\
+&=\frac{a}{a+b+|X=1|+|X=0|} + \frac{|X=1|}{|X=1|+|X=0|+a+b}   \\
+&=\frac{a}{a+b*(1+\frac{|X=1|+|X=0|}{a+b}} + \frac{|X=1|}{|X=1|+|X=0|*(1+\frac{a+b}{|X=1|+|X=0|}}   \\
+&=\frac{a}{a+b}*\frac{1}{1+\frac{|X=1|+|X=0|}{a+b}} + \frac{|X=1|}{|X=1|+|X=0|}*\frac{1}{(1+\frac{a+b}{|X=1|+|X=0|}}  \\
+&=\frac{a}{a+b}*\frac{1}{1+\frac{|X=1|+|X=0|}{a+b}} + \frac{|X=1|}{|X=1|+|X=0|}*\frac{|X=1|+|X=0|}{(|X=1|+|X=0|+(a+b)}  \\
+&=\frac{a}{a+b}*\frac{1}{1+\frac{|X=1|+|X=0|}{a+b}} + \frac{|X=1|}{|X=1|+|X=0|}*(\frac{|X=1|+|X=0|+a+b}{(|X=1|+|X=0|)+(a+b)}) \\ &-\frac{a+b}{(|X=1|+|X=0|+(a+b))}  \\
+&=\frac{a}{a+b}*\frac{1}{1+\frac{|X=1|+|X=0|}{a+b}} + \frac{|X=1|}{|X=1|+|X=0|}*(1-\frac{a+b}{(|X=1|+|X=0|+(a+b))})  \\
+&=\frac{a}{a+b}*\frac{1}{1+\frac{|X=1|+|X=0|}{a+b}} + \frac{|X=1|}{|X=1|+|X=0|}*(1-\frac{1}{(\frac{|X=1|+|X=0|}{a+b}+1)})  \\
+\end{align*}
+Insert: \\
+\\
 $\lambda = \frac{1}{1+\frac{|X=1|+|X=0|}{a+b}}$ \\
-$= \lambda * \frac{a}{a+b} + (1-\lambda ) * \frac{|X=1|}{|X=1|+|X=0|} $ \\
+$ mean(P(\theta | D )) = \lambda * \frac{a}{a+b} + (1-\lambda ) * \frac{|X=1|}{|X=1|+|X=0|} $ \\
 
 qed.
