@@ -2,7 +2,13 @@
 P(X=x|\theta) = \theta^x (1-\theta)^{1-x}
 \]
 
-goal: determine $\theta_{MLE}$
+goal: determine $\theta_{MLE}$ for $n$ experiments
+
+multiple bernoulli experiments $\Rightarrow$ binomial distribution
+
+\begin{itemize}
+\item{Z: number of experiments that end with $X=1$}
+\end{itemize}
 
 \begin{align*}
 \theta_{MLE} &= \argmax_\theta P(X=x|\theta) \\
@@ -11,19 +17,20 @@ goal: determine $\theta_{MLE}$
 \end{align*}
 
 \begin{align*}
-\log P(X=x|\theta) &= \log{\theta^x (1-\theta)^{1-x}} \\
- &= x \cdot \log{\theta} + (1-x) \cdot \log{(1-\theta)}
+P(Z=z|\theta) &= \binom{n}{z} \, \theta^z (1-\theta)^{n-z} \\
+\log P(Z=z|\theta) &= \log\left(\binom{n}{z}\,\theta^z (1-\theta)^{n-z}\right) \\
+ &= \log \binom{n}{z} + z \log{\theta} + (n-z) \log{(1-\theta)}
 \end{align*}
 
 \begin{align*}
-0 &= \frac{\di}{\di \theta} ( x \cdot \log{\theta} + (1-x) \cdot \log{(1-\theta)} ) \\
-  &= x \cdot \frac{1}{\theta} + (1-x) \cdot \frac{1}{1-\theta} \cdot (-1) \\
-  &= \frac{x}{\theta} - \frac{1-x}{1-\theta} \\
-\Leftrightarrow \frac{1-x}{1-\theta} &= \frac{x}{\theta} \\
-\Leftrightarrow \frac{1-x}{x} &= \frac{1-\theta}{\theta} \\
-\Leftrightarrow \frac{1}{x} - 1 &= \frac{1}{\theta} - 1 \\
-\Leftrightarrow \frac{1}{x} &= \frac{1}{\theta} \\
-\Leftrightarrow \theta &= x \\
-\Rightarrow \theta_{MLE} &= x
+0 &= \frac{\di}{\di \theta} \left(\log \binom{n}{z} + z \cdot \log{\theta} + (n-z) \cdot \log{(1-\theta)} \right) \\
+  &= z \cdot \frac{1}{\theta} + (n-z) \cdot \frac{1}{1-\theta} \cdot (-1) \\
+  &= \frac{z}{\theta} - \frac{n-z}{1-\theta} \\
+\Leftrightarrow \frac{n-z}{1-\theta} &= \frac{z}{\theta} \\
+\Leftrightarrow \frac{n-z}{z} &= \frac{1-\theta}{\theta} \\
+\Leftrightarrow \frac{n}{z} - 1 &= \frac{1}{\theta} - 1 \\
+\Leftrightarrow \frac{n}{z} &= \frac{1}{\theta} \\
+\Leftrightarrow \theta &= \frac{z}{n} \\
+\Rightarrow \theta_{MLE} &= \frac{z}{n}
 \end{align*}
 
