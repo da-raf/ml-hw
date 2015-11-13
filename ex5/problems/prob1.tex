@@ -1,0 +1,26 @@
+\[ \mathbf{X} = \left( X_1, X_2, X_3 \right)^T, \quad X_i \sim \mathrm{Ber}(0.5) \]
+
+\begin{itemize}
+	\item in the following I use $P(X_i) \equiv P(X_i = 1)$ to improve readability
+	\item assume $X_1$ and $X_2$ to be independent
+\end{itemize}
+
+define:
+\begin{align*}
+	P(X_3|X_1=0,X_2=0) = 1 \\
+	P(X_3|X_1=0,X_2=1) = 0 \\
+	P(X_3|X_1=1,X_2=0) = 0 \\
+	P(X_3|X_1=1,X_2=1) = 1
+\end{align*}
+$\Rightarrow X_3$ is not independent from a combination of $X_1$ and $X_2$
+
+\begin{align*}
+	P(X_3|X_1) &= P(X_2=0) P(X_3|X_1=1,X_2=0) + P(X_2=1) P(X_3|X_1=1,X_2=1) \\
+		   &= 0.5 \cdot 0 + 0.5 \cdot 1 \\
+	    &= 0.5 = P(X_3) \\
+	P(X_3|X_2) &= P(X_1=0) P(X_3|X_1=0,X_2=1) + P(X_1=1) P(X_3|X_1=1,X_2=1) \\
+		   &= 0.5 \cdot 0 + 0.5 \cdot 1 \\
+	    &= 0.5 = P(X_3)
+\end{align*}
+$\Rightarrow X_3$ is pairwise independent from $X_1$ and $X_2$ but not mutually independent from both
+
