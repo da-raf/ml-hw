@@ -1,0 +1,32 @@
+\[ \rho(X, aX+b) = \frac{\Cov[X,aX+b]}{\sqrt{\Var[X] \, \Var[aX+b]}} \]
+
+\begin{align*}
+\Var[aX+b] &= \E[\left(aX+b\right)^2] - \E[aX+b]^2 \\
+           &= \E[\left(aX+b\right)^2] - \left(a \E[X] + b\right)^2 \\
+           &= \E[a^2 X^2 + 2abX + b^2] - \left(a^2 \E[X]^2 + 2ab \E[X] + b^2\right) \\
+	   &= a^2 \E[X^2] + 2ab \E[X] + b^2 - a^2 \E[X]^2 - 2ab \E[X] - b^2 \\
+	   &= a^2 \left(\E[X^2] - \E[X]^2\right) \\
+	   &= a^2 \Var[X]
+\end{align*}
+
+\begin{align*}
+\Cov(X, aX+b) &= \E[X (aX+b)] - \E[X] \, \E[aX+b] \\
+	      &= \E[aX^2+bX] - \E[X] \, (\E[aX]+b) \\
+	      &= a \E[X^2] + b \E[X] - a \E[X]^2 - b \E[X] \\
+	      &= a (\E[X^2] - \E[X]^2) \\
+	      &= a \Var[X]
+\end{align*}
+
+\begin{align*}
+\Rightarrow \rho(X, aX+b) &= \frac{a \Var[X]}{\sqrt{\Var[X] \, a^2 \Var[X]}} \\
+			  &= \frac{a \Var[X]}{|a| \, \Var[X]} \\
+			  &= \frac{a}{|a|}
+\end{align*}
+
+\begin{align*}
+\Rightarrow \rho(X, aX+b) = \begin{cases}
+	1, \quad & a > 0 \\
+	-1, \quad & a < 0
+\end{cases}
+\end{align*}
+
