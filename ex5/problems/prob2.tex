@@ -1,0 +1,9 @@
+\begin{align*}
+\Var[X+Y] &= \E[\left(X+Y\right)^2] - \E[X+Y]^2 \\
+          &= \E[\left(X+Y\right)^2] - \left(\E[X] + \E[Y]\right)^2 \\
+          &= \E[X^2 + 2XY + Y^2] - \left(\E[X]^2 + 2 \E[X] \E[Y] + \E[Y]^2\right) \\
+	  &= \E[X^2] + 2 \E[XY] + \E[Y^2] - \E[X]^2 - 2 \E[X] \E[Y] - \E[Y]^2 \\
+	  &= \left(\E[X^2] - \E[X]^2\right) + 2 \left(\E[XY] - \E[X] \E[Y]\right) + \left(\E[Y^2] - \E[Y]^2\right) \\
+	  &= \Var[X] + 2 \, \Cov[X,Y] + \Var[Y]
+\end{align*}
+
