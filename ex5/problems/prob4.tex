@@ -1,0 +1,76 @@
+Defining  $\mu:$
+
+
+\begin{align*}
+	\E(Z) &= \mu_{Z} = \begin{pmatrix}
+			\mu_{X} \\
+			\mu_{Y} 
+			\end{pmatrix}
+\end{align*}
+
+\begin{align*}
+\Sigma &= \Cov(Z) \\
+&= \E((Z-\E(Z))*(Z-\E(Z))^T) \\
+&=\E(\begin{pmatrix}
+		X-\mu_{X} \\
+		Y-\mu_{Y} 
+\end{pmatrix}
+\begin{pmatrix}
+(X-\mu_{X}) &&
+(Y-\mu_{Y}) 
+\end{pmatrix}) \\
+&=
+\E(\begin{pmatrix}
+(X-\mu_{X})^2 && (X-\mu_{X})*(Y-\mu_{Y}) \\
+(Y-\mu_{Y})*(X-\mu_{X}) &&  (Y-\mu_{Y})^2 
+\end{pmatrix} \\
+&=
+\begin{pmatrix}
+\E((X-\mu_{X})^2) && \E((X-\mu_{X})*(Y-\mu_{Y})) \\
+\E((Y-\mu_{Y})*(X-\mu_{X})) &&  \E((Y-\mu_{Y})^2) 
+\end{pmatrix} \\
+&=
+\begin{pmatrix}
+\Var(X) && \Cov(X,Y) \\
+\Cov(Y,X) && \Var(Y) 
+\end{pmatrix} \\
+&=
+\begin{pmatrix}
+\sigma_{X}^2 && 0 \\
+ 0           && \sigma_{Y}^2 
+\end{pmatrix}
+\end{align*}
+
+Since $\Sigma$ is diagonal:\\
+\begin{align*}
+det(\Sigma) &= det(diag(\sigma_{X}^2,\sigma_{Y}^2))= \sigma_{X}^2*\sigma_{Y}^2\\
+\Sigma^{-1} &= diag(\sigma_{X}^2,\sigma_{Y}^2)^{-1}=diag((\sigma_{X}^2)^{-1},(\sigma_{Y}^2)^{-1})=\begin{pmatrix}
+\frac{1}{\sigma_{X}^2} && 0 \\
+0           && \frac{1}{\sigma_{Y}^2} 
+\end{pmatrix} \\
+\end{align*}
+
+Independents holds iff. $p(z) = p(x)*p(y) $ Proof:
+
+\begin{align*}
+p(z) &= \N(z|\mu_Z,\Sigma) \\
+&= \frac{1}{\sqrt{(2\pi)^2}*|\Sigma|}*exp(-\frac{1}{2}(z-\mu_Z)^T *\Sigma^{-1}*(z-\mu_Z) )\\
+&=\frac{1}{\sqrt{(2\pi)^2}*\sigma_{X}^2 *\sigma_{Y}^2  } * exp(-\frac{1}{2}\begin{pmatrix} (x-\mu_{X}) && (y-\mu_{Y}) \end{pmatrix}) 
+*\begin{pmatrix}
+\frac{1}{\sigma_{X}^2} && 0 \\
+0           && \frac{1}{\sigma_{Y}^2} 
+\end{pmatrix}
+*(z-\mu_Z) )\\
+&=\frac{1}{\sqrt{(2\pi)^2}*\sigma_{X}^2 *\sigma_{Y}^2  } * exp(-\frac{1}{2}\begin{pmatrix} \frac{(x-\mu_{X})}{\sigma_{X}^2} && \frac{y-\mu_{Y}}{\sigma_{Y}^2} \end{pmatrix}) 
+*\begin{pmatrix}
+x-\mu_{X} \\
+y-\mu_{Y} 
+\end{pmatrix} \\
+&=\frac{1}{\sqrt{(2\pi)^2}*\sigma_{X}^2 *\sigma_{Y}^2  } * exp(-\frac{1}{2} (\frac{(x-\mu_{X})^2}{\sigma_{X}^2} + \frac{(y-\mu_{Y})^2}{\sigma_{Y}^2}) )\\
+&=\frac{1}{\sqrt{(2\pi)^2}*\sigma_{X}^2 *\sigma_{Y}^2  } * exp(-\frac{(x-\mu_{X})^2}{2\sigma_{X}^2} + (-\frac{(y-\mu_{Y})^2}{2\sigma_{Y}^2}) )\\ 
+&=\frac{1}{\sqrt{(2\pi)}*\sigma_{X}^2 * \sqrt{(2\pi)}* \sigma_{Y}^2  } * exp(-\frac{(x-\mu_{X})^2}{2\sigma_{X}^2}) * exp (-\frac{(y-\mu_{Y})^2}{2\sigma_{Y}^2})\\ 
+&=\frac{1}{\sqrt{(2\pi)}*\sigma_{X}^2}*\frac{1}{\sqrt{(2\pi)}* \sigma_{Y}^2  } * exp(-\frac{(x-\mu_{X})^2}{2\sigma_{X}^2}) * exp (-\frac{(y-\mu_{Y})^2}{2\sigma_{Y}^2})\\
+&=\frac{1}{\sqrt{(2\pi)}*\sigma_{X}^2} * exp(-\frac{(x-\mu_{X})^2}{2\sigma_{X}^2}) * \frac{1}{\sqrt{(2\pi)}* \sigma_{Y}^2  } * exp (-\frac{(y-\mu_{Y})^2}{2\sigma_{Y}^2})\\
+&= \N(x|\mu_X,\sigma_X^2) * \N(y|\mu_Y,\sigma_Y^2) = p(x)*p(y) \\
+\end{align*}
+
