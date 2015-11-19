@@ -1,0 +1,17 @@
+Assume Problem properties are: 
+\begin{align*}
+y &= 10 + 5x + \epsilon \\
+\epsilon &\sim \N(0,4)
+\end{align*}
+
+\begin{align*}
+\Pr(y>10|x = 0) &= \Pr((10 + 5x + \epsilon)>10|x = 0) \\
+&= \Pr((10 + \epsilon)>10) \\
+&= \Pr((\epsilon)>0) \\
+&= \int_{0}^{\infty} (\frac{1}{\sqrt{8\pi}} * e^{\frac{ -\epsilon^2}{8}})\di\epsilon\\
+&=\frac{1}{\sqrt{8\pi}} * \int_{0}^{\infty}  (e^{\frac{ -\epsilon^2}{8}})\di\epsilon\\
+&=(\frac{1}{\sqrt{8\pi}} * \int_{0}^{\infty}  e^{-\frac{ 1}{8}* \epsilon^2})\di\epsilon &|Gaussian~Integral \\
+&=\frac{1}{\sqrt{8\pi}} * \frac{1}{2}*\sqrt{\frac{\pi}{(\frac{1}{8})}} \\
+&=\frac{1}{\sqrt{8\pi}} * \frac{1}{2}*\sqrt{8\pi} \\
+&= \frac{1}{2}
+\end{align*}
