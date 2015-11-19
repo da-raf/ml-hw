@@ -1,0 +1,15 @@
+\begin{align*}
+ M^{-1} - \frac{\left(M^{-1}v\right)\left(v^T M^{-1}\right)}{1 + v^T M^{-1} v}
+    &= \left(M + vv^T\right)^{-1} \left(M + vv^T\right) \left(M^{-1} - \frac{\left(M^{-1}v\right)\left(v^T M^{-1}\right)}{1 + v^T M^{-1} v}\right) \\
+    &= \left(M + vv^T\right)^{-1} \left(\left(M + vv^T\right)M^{-1} - \frac{\left(M + vv^T\right)\left(M^{-1}v\right)\left(v^T M^{-1}\right)}{1 + v^T M^{-1} v}\right) \\
+    &= \left(M + vv^T\right)^{-1} \left(I + vv^TM^{-1} - \frac{\left(v + vv^T M^{-1} v\right)\left(v^T M^{-1}\right)}{1 + v^T M^{-1} v}\right) \\
+    &= \left(M + vv^T\right)^{-1} \left(I + vv^TM^{-1} - \frac{v\left(1 + v^T M^{-1} v\right)\left(v^T M^{-1}\right)}{1 + v^T M^{-1} v}\right) \\
+\end{align*}
+
+as $(1 + v^T M^{-1} v)$ is a scalar, it can be moved to the front:
+\begin{align*}
+    &= \left(M + vv^T\right)^{-1} \left(I + vv^TM^{-1} - \frac{1 + v^T M^{-1} v}{1 + v^T M^{-1} v} \; v \left(v^T M^{-1}\right)\right) \\
+    &= \left(M + vv^T\right)^{-1} \left(I + vv^T M^{-1} - vv^T M^{-1}\right) \\
+    &= \left(M + vv^T\right)^{-1}
+\end{align*}
+
