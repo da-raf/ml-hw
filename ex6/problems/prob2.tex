@@ -13,3 +13,27 @@ as $(1 + v^T M^{-1} v)$ is a scalar, it can be moved to the front:
     &= \left(M + vv^T\right)^{-1}
 \end{align*}
 
+from the slides:
+\begin{align*}
+	S_N^{-1} &= S_0^{-1} + \beta \Phi^T \Phi \\
+	\Leftrightarrow S_{N+1}^{-1} &= S_N^{-1} + \beta v v^T \\
+	\Leftrightarrow S_{N+1} &= (S_N^{-1} + \beta v v^T)^{-1} \\
+				&= (S_N - \frac{\beta (S_N v)(v^T S_N)}{1 + \beta v^T S_N v}) \\
+	&= (S_N - \frac{\beta S_N (v v^T) S_N}{1 + \beta v^T S_N \, v})
+\end{align*}
+
+\begin{itemize}
+\item{$S_{N+1}$ and $S_N$ are both semi-positive definite covariance matrices}
+\item{the denominator of the fraction is positive as $S_N$ is semi-positive definite}
+\item{the nominator is semi-positive definite since it is a product of semi-positive definite matrices ($vv^T$ is always semi-positive definite)}
+\item{the fraction (in the next step defined as $A$) is semi-positive definite}
+\end{itemize}
+
+\[ A := \frac{\beta S_N (v v^T) S_N}{1 + \beta v^T S_N \, v} \]
+
+\begin{align*}
+	\Leftrightarrow S_{N+1} &= S_N - A \\
+	\Leftrightarrow S_{N+1} &\le S_N \\
+	\Leftrightarrow \sigma_{N+1}^2(x) &\le \sigma_N^2(x)
+\end{align*}
+
