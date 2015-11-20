@@ -1,0 +1,22 @@
+
+define:
+\begin{itemize}
+\item{$e_m$ is the $m$-th unit vector}
+\item{$z_n' := \begin{cases}
+  z_n, & \quad n <= N \\
+  0,  & \quad n > N
+\end{cases}$}
+\item{$A := (\phi(x_1), \ldots, \phi(x_n), \sqrt{\lambda} \; e_1, \ldots, \sqrt{\lambda} \; e_m)$}
+\end{itemize}
+
+\begin{align*}
+ E_\D &= \frac{1}{2} \sum\limits^N \left(z_n - w^T \phi\left(x_n\right)\right)^2 + \frac{\lambda}{2} \sum\limits^M w_j^2 \\
+      &= \frac{1}{2} \sum\limits^N \left(z_n - w^T \phi\left(x_n\right)\right)^2 + \frac{1}{2} \sum\limits^M \left(\sqrt{\lambda} \; w_j\right)^2 \\
+      &= \frac{1}{2} \sum\limits^N \left(z_n - w^T \phi\left(x_n\right)\right)^2 + \frac{1}{2} \sum\limits^M \left(0 - w_j \sqrt{\lambda}\right)^2 \\
+      &= \frac{1}{2} \sum\limits^N \left(z_n - w^T \phi\left(x_n\right)\right)^2 + \frac{1}{2} \sum\limits^M \left(0 - w^T \sqrt{\lambda} \; e_m\right)^2 \\
+      &= \frac{1}{2} \left(\sum\limits^N \left(z_n - w^T \phi\left(x_n\right)\right)^2 + \sum\limits^M \left(0 - w^T \sqrt{\lambda} \; e_m\right)^2\right) \\
+      &= \frac{1}{2} \sum\limits^{N+M} \left(z_n' - w^T A_n\right)^2
+\end{align*}
+
+
+
