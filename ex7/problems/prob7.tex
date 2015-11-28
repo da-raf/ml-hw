@@ -1,0 +1,23 @@
+Show by induction
+Start:
+$k = 0 $,
+$w^0 = \begin{bmatrix}
+	0\\0
+\end{bmatrix}$\\
+\begin{align*}
+	\tilde{w}^T w^0 &\geq k \gamma\\
+	0 &\geq 0
+\end{align*}
+
+Induction Hypothesis:
+\begin{align*}
+ \tilde{w}^T w^{k} &\geq {k} \gamma\\
+\end{align*}
+
+Induction Step:
+\begin{align*}
+\tilde{w}^T w^{k+1} &\geq (k+1) \gamma\\
+\tilde{w}^T w^{k}+\tilde{w}^T (t_i*x_i) &\geq {k} \gamma +\gamma &| apply IH \\
+\tilde{w}^T (t_i*x_i) &\geq \gamma &| t_i scalar\\
+t_i \tilde{w}^T x_i &\geq \gamma &| definition of \gamma\\
+\end{align*}

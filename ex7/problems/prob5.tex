@@ -1,0 +1,20 @@
+\begin{algorithm}
+	\KwData{$x_i, t_i,  w^0, b^0$}
+	\KwResult{$w^k,b^k$ }
+	$w^0 \leftarrow 0 $\;
+	$b^0 \leftarrow 0 $\;
+	$k \leftarrow 0$\; 
+	\While{$\exists New Data$}{
+		$\xi \leftarrow  b + x_i^T w^k$\;
+		\eIf{$\xi > 0$}{$y \leftarrow 1$\;}{$y \leftarrow -1$\;}
+		\If{$y \ne z$}{
+			\eIf{$t_i = 1$ }
+			{$w^{k+1} \leftarrow w^k+x_i$\;
+			 $b^{k+1} \leftarrow b^k+1$\;}
+			{$w^{k+1} \leftarrow w^k-x_i$\;
+		     $b^{k+1} \leftarrow b^k-1$\;}
+		   k++\;
+		}
+}
+\caption{Perceptron Learning algorithm}
+\end{algorithm}
