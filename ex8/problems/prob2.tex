@@ -1,0 +1,27 @@
+\begin{align*}
+	\forall x_1, x_2 \in X , \forall t \in [0,1] \\
+	f(tx_1 + (1-t)x_2) \le tf(x_1) +(1-t)f(x_2) \and  \\
+	g(tx_1 + (1-t)x_2) \le tg(x_1) +(1-t)g(x_2) \\
+	==> h(tx_1 + (1-t)x_2) \le th(x_1) +(1-t)h(x_2) 
+\end{align*}
+
+\begin{align*}
+h(tx_1 + (1-t)x_2) &= f(tx_1 + (1-t)x_2) + g(tx_1 + (1-t)x_2) \\
+&\le tf(x_1) +(1-t)f(x_2) + g(tx_1 + (1-t)x_2) \\
+&\le tf(x_1) +(1-t)f(x_2) + tg(x_1) +(1-t)g(x_2) \\
+&= t(f(x_1) + g(x_1)) +(1-t)(f(x_2)+g(x_2))\\
+&= th(x_1) +(1-t)h(x_2)
+\end{align*}
+
+\begin{align*}
+\forall x_1, x_2 \in X , \forall t \in [0,1] \\
+f(tx_1 + (1-t)x_2) \le tf(x_1) +(1-t)f(x_2) \and  \\
+c \ge 0 \\
+==> u(tx_1 + (1-t)x_2) \le tu(x_1) +(1-t)u(x_2) 
+\end{align*}
+
+\begin{align*}
+u(tx_1 + (1-t)x_2) &\le tu(x_1) +(1-t)u(x_2)\\
+c* f(tx_1 + (1-t)x_2) &\le t*c*f(x_1) +(1-t)*c*f(x_2)  |\text{using c $\ge$ 0}\\
+f(tx_1 + (1-t)x_2) &\le t*f(x_1) +(1-t)*f(x_2)\\
+\end{align*}
