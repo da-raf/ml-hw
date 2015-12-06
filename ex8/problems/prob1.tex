@@ -1,0 +1,15 @@
+Start with the kNN-Algorithm that uses the euclidean distance as similarity measure.
+
+\begin{align*}
+d(x,y) &= \sqrt{(y-x)^T(y-x)} \\
+       &= \sqrt{x^Tx - 2x^Ty + y^Ty}
+\end{align*}
+
+Apply the feature mapping $\phi$:
+\[ d(x,y) = \sqrt{\phi(x)^T\phi(x) - 2\phi(x)^T\phi(y) + \phi(y)^T\phi(y)} \]
+
+Now replace the scalar products with \emph{Kernels}:
+\[ d_K(x,y) = \sqrt{K(x,x) - 2K(x,y) + K(y,y)} \]
+
+The kernel does not necessarily need to implement the scalar product, but can also map the dataset to a higher dimension to make the dataset linearly separable.
+
