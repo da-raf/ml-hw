@@ -1,3 +1,6 @@
+Fix $\lambda'$ so that $f_{\lambda'}(tx_1 + (1-t)x_2) = \underset{\lambda}{max} f_\lambda(tx_1 + (1-t)x_2)$  
 \begin{align*}
-g(tx_1 + (1-t)x_2) \le t(g)
+ \underset{\lambda}{max} f_\lambda(tx_1 + (1-t)x_2) &=f_{\lambda'}(tx_1 + (1-t)x_2)\\
+ &\le tf_{\lambda'}(x_1)  + (1-t) f_{\lambda'}(x_2) \\
+ &\le t \underset{\lambda}{max} f_{\lambda}(x_1)  + (1-t) \underset{\lambda}{max} f_{\lambda}(x_2) 
 \end{align*}
