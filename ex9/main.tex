@@ -1,0 +1,35 @@
+\documentclass{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[final]{pdfpages}
+
+\usepackage{forloop}
+\usepackage{graphicx}
+\usepackage[final]{pdfpages}
+
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[]{algorithm2e}
+
+
+\title{Machine Learning Worksheet 9}
+\author{Thomas Blocher -- MatrNr. 03624034 \\ Raphael D\"umig -- MatrNr. 03623199}
+
+\newcommand{\di}{\;\mathrm{d}}
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\D}{\mathcal{D}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\argmax}{\mathrm{arg}\,\mathrm{max}}
+
+\begin{document}
+\maketitle
+
+\newcounter{seccount}
+\forloop{seccount}{1}{\value{seccount} < 9}{
+	\section*{Problem \arabic{seccount}}
+	\input{problems/prob\arabic{seccount}.tex}
+}
+
+\end{document}
