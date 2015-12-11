@@ -1,0 +1,9 @@
+\begin{align*}
+\phi_\infty(x)^T \phi_\infty(y)
+  &= \sum\limits_{i=0}^\infty e^{-\frac{x^2}{2 \sigma^2}} \cdot e^{-\frac{y^2}{2 \sigma^2}} \cdot \frac{(\frac{x}{\sigma})^i}{\sqrt{i!}} \cdot \frac{( \frac{y}{\sigma} )^i}{\sqrt{i!}} \\
+  &= e^{-\frac{x^2+y^2}{2\sigma^2}} \cdot \sum\limits_{i=0}^\infty \frac{ (\frac{xy}{\sigma^2})^i }{i!} \\
+  &= e^{-\frac{x^2+y^2}{2\sigma^2}} \cdot e^{\frac{xy}{\sigma^2}} \\
+  &= e^{-\frac{x^2 - 2xy + y^2}{2\sigma^2}} \\
+  &= e^{-\frac{(x-y)^2}{2\sigma^2}}
+\end{align*}
+
