@@ -1,0 +1,8 @@
+In the noise-free case we have $p(f_*|y,X) = p(f_*|f,X)$ since $y = f$.
+
+\begin{align*}
+ f_*|f,X &\sim \N(\mu_* + K_*^T K^{-1} (f-\mu), \; K_{**} - K_*^T K^{-1} K_*) \\
+            &= \N(K_* K^{-1} f, \; K_{**} - K_*^T K^{-1} K_*) \\
+	    &= \N(K_*^T \cdot \left(\begin{smallmatrix}-0.9479\\5.5074\end{smallmatrix}\right), \; K_{**} - K_*^T K^{-1} K_*)
+\end{align*}
+
