@@ -1,0 +1,17 @@
+\begin{align*}
+\sigma'(x) &= - \frac{1}{(x + e^{-x})^2} \cdot e^{-x} \cdot (-1) \\
+ &= \sigma(x)^2 e^{-x} \\
+ &= \sigma(x)^2 \left(\frac{1}{\sigma(x)} - 1\right) \\
+ &= \sigma(x) (1 - \sigma(x))
+\end{align*}
+
+\begin{align*}
+\tanh'{x} &= \frac{\di}{\di x} (1 - 2 \sigma(-2x)) \\
+ &= (-2) \cdot \sigma'(-2x) \cdot (-2) \\
+ &= (-2) \cdot \sigma(-2x) \cdot (1 - \sigma(-2x)) \cdot (-2) \\
+ &= (-2) \cdot \left(\frac{\tanh{x}-1}{-2}\right) \cdot \left(1 - \frac{\tanh{x}-1}{-2}\right) \cdot (-2) \\
+ &= (\tanh{x}-1) \cdot (-2 - (\tanh{x}-1)) \\
+ &= ((-1) + \tanh{x}) \cdot ((-1) - \tanh{x}) \\
+ &= 1 - (\tanh{x})^2
+\end{align*}
+

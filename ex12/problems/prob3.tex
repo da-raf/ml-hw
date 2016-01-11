@@ -1,0 +1,18 @@
+\begin{itemize}
+\item{$n$: number of target variables}
+\item{$Z$: random vector of target variables $z_i$, ($1 \leq i \leq n$)}
+\end{itemize}
+
+$\Rightarrow P(Z|x,w)$ can be used as a likelihood function
+
+\begin{align*}
+ \underset{Z}{\argmax} \; P(Z|x,w) &= \underset{Z}{\argmax} \prod_{i=1}^n P(z_i|x,w) \\
+  &= \underset{Z}{\argmax} \sum_{i=1}^n \ln{P(z_i|x,w)} \\
+  &= \underset{Z}{\argmax} \sum_{i=1}^n \ln{\left(\frac{1}{\sqrt{2\pi} \beta} \cdot e^{-\frac{(z_i - y(x,w))^2}{\beta^{-2}}}\right)} \\
+  &= \underset{Z}{\argmax} \sum_{i=1}^n \ln{\left(\frac{1}{\sqrt{2\pi} \beta}\right)} - \frac{(z_i - y(x,w))^2}{\beta^{-2}} \\
+  &= \underset{Z}{\argmax} \sum_{i=1}^n -\frac{(z_i - y(x,w))^2}{\beta^{-2}} \\
+  &= \underset{Z}{\argmin} \sum_{i=1}^n \frac{(z_i - y(x,w))^2}{\beta^{-2}} \\
+  &= \underset{Z}{\argmin} \sum_{i=1}^n (z_i - y(x,w))^2
+\end{align*}
+
+The last formula is the least squares error.
